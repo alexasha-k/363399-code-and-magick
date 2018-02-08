@@ -16,50 +16,24 @@ var randomNumberFromArr = function (arr) {
 // Функция для получения случайного имени волшебника
 
 var getWizardName = function () {
-  var wizardName;
   var similarName = names[randomNumberFromArr(names)];
   var similarSurname = surnames[randomNumberFromArr(surnames)];
-  wizardName = similarName + ' ' + similarSurname;
-  return wizardName;
+  return similarName + ' ' + similarSurname;
 };
 
 // Функция для получения цвета мантии волшебника
 
 var getWizardCoatColor = function () {
-  var wizardCoatColor;
-  wizardCoatColor = coatColors[randomNumberFromArr(coatColors)];
-  return wizardCoatColor;
+  return coatColors[randomNumberFromArr(coatColors)];
 };
 
 // Функция для получения цвета глаз волшебника
 
 var getWizardEyesColor = function () {
-  var wizardEyesColor;
-  wizardEyesColor = eyesColors[randomNumberFromArr(eyesColors)];
-  return wizardEyesColor;
+  return eyesColors[randomNumberFromArr(eyesColors)];
 };
 
-var pers = [
-  {
-    name: getWizardName(),
-    coatColor: getWizardCoatColor(),
-    eyesColor: getWizardEyesColor()
-  },
-  {
-    name: getWizardName(),
-    coatColor: getWizardCoatColor(),
-    eyesColor: getWizardEyesColor()
-  },
-  {
-    name: getWizardName(),
-    coatColor: getWizardCoatColor(),
-    eyesColor: getWizardEyesColor()},
-  {
-    name: getWizardName(),
-    coatColor: getWizardCoatColor(),
-    eyesColor: getWizardEyesColor()
-  }
-];
+var pers = [];
 
 var similarListElement = document.querySelector('.setup-similar-list');
 
@@ -70,6 +44,19 @@ var createDOMElement = function (el) {
 };
 
 var similarWizardTemplate = createDOMElement(document.querySelector('#similar-wizard-template'));
+
+var getWizards = function (num) {
+  for (var i = 0; i < num; i++) {
+    var obj = {
+        name: getWizardName(),
+        coatColor: getWizardCoatColor(),
+        eyesColor: getWizardEyesColor()
+      };
+    pers.push(obj);
+  }
+};
+
+getWizards(4);
 
 //  Функция заполнения блока DOM-элементами
 
