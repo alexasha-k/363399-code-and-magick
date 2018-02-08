@@ -48,10 +48,10 @@ var similarWizardTemplate = createDOMElement(document.querySelector('#similar-wi
 var getWizards = function (num) {
   for (var i = 0; i < num; i++) {
     var obj = {
-        name: getWizardName(),
-        coatColor: getWizardCoatColor(),
-        eyesColor: getWizardEyesColor()
-      };
+      name: getWizardName(),
+      coatColor: getWizardCoatColor(),
+      eyesColor: getWizardEyesColor()
+    };
     pers.push(obj);
   }
 };
