@@ -33,7 +33,6 @@ var getWizardEyesColor = function () {
   return eyesColors[randomNumberFromArr(eyesColors)];
 };
 
-var pers = [];
 
 var similarListElement = document.querySelector('.setup-similar-list');
 
@@ -46,17 +45,19 @@ var createDOMElement = function (el) {
 var similarWizardTemplate = createDOMElement(document.querySelector('#similar-wizard-template'));
 
 var getWizards = function (num) {
+  var arr = [];
   for (var i = 0; i < num; i++) {
     var obj = {
       name: getWizardName(),
       coatColor: getWizardCoatColor(),
       eyesColor: getWizardEyesColor()
     };
-    pers.push(obj);
+    arr.push(obj);
   }
+  return arr;
 };
 
-getWizards(4);
+var pers = getWizards(4);
 
 //  Функция заполнения блока DOM-элементами
 
